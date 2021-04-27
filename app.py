@@ -26,7 +26,7 @@ from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X = sc.fit_transform(X)
 def predict_note_authentication(UserID, Gender,Age,EstimatedSalary):
-  output= model.predict([[Gender,Age,EstimatedSalary]])
+  output= model.predict(sc.transform([[Gender,Age,EstimatedSalary]]))
   print("Purchased", output)
   if output==[1]:
     prediction="Item will be purchased"
